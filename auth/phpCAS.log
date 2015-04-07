@@ -1,0 +1,941 @@
+9EE3 .START phpCAS-1.3.3+ ****************** [CAS.php:447]
+9EE3 .=> phpCAS::client('2.0', 'sso.ui.ac.id/cas2', 443, '') [auth.php:10]
+9EE3 .|    => CAS_Client::__construct('2.0', false, 'sso.ui.ac.id/cas2', 443, '', true) [CAS.php:340]
+9EE3 .|    |    Starting a new session h812l8ald1fn9qqgf7cn7bga07 [Client.php:906]
+9EE3 .|    <= ''
+9EE3 .<= ''
+9EE3 .=> phpCAS::setNoCasServerValidation() [auth.php:19]
+9EE3 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1562]
+9EE3 .<= ''
+9EE3 .=> phpCAS::forceAuthentication() [auth.php:22]
+9EE3 .|    => CAS_Client::forceAuthentication() [CAS.php:1024]
+9EE3 .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+9EE3 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+9EE3 .|    |    |    |    no user found [Client.php:1598]
+9EE3 .|    |    |    <= false
+9EE3 .|    |    |    no ticket found [Client.php:1457]
+9EE3 .|    |    <= false
+9EE3 .|    |    => CAS_Client::redirectToCas(false) [Client.php:1254]
+9EE3 .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1619]
+9EE3 .|    |    |    |    => CAS_Client::getURL() [Client.php:342]
+9EE3 .|    |    |    |    |    Final URI: http://localhost/CASSSO/auth.php [Client.php:3472]
+9EE3 .|    |    |    |    <= 'http://localhost/CASSSO/auth.php'
+9EE3 .|    |    |    <= 'https://sso.ui.ac.id/cas2/login?service=http%3A%2F%2Flocalhost%2FCASSSO%2Fauth.php'
+9EE3 .|    |    |    Redirect to : https://sso.ui.ac.id/cas2/login?service=http%3A%2F%2Flocalhost%2FCASSSO%2Fauth.php [Client.php:1626]
+9EE3 .|    |    |    exit()
+9EE3 .|    |    |    -
+9EE3 .|    |    -
+9EE3 .|    -
+7218 .START phpCAS-1.3.3+ ****************** [CAS.php:447]
+7218 .=> phpCAS::client('2.0', 'sso.ui.ac.id/cas2', 443, '') [auth.php:10]
+7218 .|    => CAS_Client::__construct('2.0', false, 'sso.ui.ac.id/cas2', 443, '', true) [CAS.php:340]
+7218 .|    |    Starting a new session h812l8ald1fn9qqgf7cn7bga07 [Client.php:906]
+7218 .|    |    Ticket 'ST-2926-yo0I2gIZAtBTq1Fegj9S-sso.ui.ac.id' found [Client.php:988]
+7218 .|    <= ''
+7218 .<= ''
+7218 .=> phpCAS::setNoCasServerValidation() [auth.php:19]
+7218 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1562]
+7218 .<= ''
+7218 .=> phpCAS::forceAuthentication() [auth.php:22]
+7218 .|    => CAS_Client::forceAuthentication() [CAS.php:1024]
+7218 .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+7218 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+7218 .|    |    |    |    no user found [Client.php:1598]
+7218 .|    |    |    <= false
+7218 .|    |    |    CAS 2.0 ticket `ST-2926-yo0I2gIZAtBTq1Fegj9S-sso.ui.ac.id' is present [Client.php:1410]
+7218 .|    |    |    => CAS_Client::validateCAS20('', NULL, NULL) [Client.php:1413]
+7218 .|    |    |    |     [Client.php:3107]
+7218 .|    |    |    |    => CAS_Client::getServerServiceValidateURL() [Client.php:3114]
+7218 .|    |    |    |    |    => CAS_Client::getURL() [Client.php:453]
+7218 .|    |    |    |    |    |    Final URI: http://localhost/CASSSO/auth.php [Client.php:3472]
+7218 .|    |    |    |    |    <= 'http://localhost/CASSSO/auth.php'
+7218 .|    |    |    |    <= 'https://sso.ui.ac.id/cas2/serviceValidate?service=http%3A%2F%2Flocalhost%2FCASSSO%2Fauth.php'
+7218 .|    |    |    |    => CAS_Client::_readURL('https://sso.ui.ac.id/cas2/serviceValidate?service=http%3A%2F%2Flocalhost%2FCASSSO%2Fauth.php&ticket=ST-2926-yo0I2gIZAtBTq1Fegj9S-sso.ui.ac.id', NULL, NULL, NULL) [Client.php:3124]
+7218 .|    |    |    |    |    => CAS_Request_CurlRequest::sendRequest() [AbstractRequest.php:242]
+7218 .|    |    |    |    |    |    Response Body: 
+7218 .|    |    |    |    |    |    
+7218 .|    |    |    |    |    |    
+7218 .|    |    |    |    |    |    
+7218 .|    |    |    |    |    |    
+7218 .|    |    |    |    |    |    <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+7218 .|    |    |    |    |    |    	<cas:authenticationSuccess>
+7218 .|    |    |    |    |    |    		<cas:user>pandhu.hutomo</cas:user>
+7218 .|    |    |    |    |    |    
+7218 .|    |    |    |    |    |    		<cas:attributes>
+7218 .|    |    |    |    |    |    		    
+7218 .|    |    |    |    |    |    			
+7218 .|    |    |    |    |    |    			   
+7218 .|    |    |    |    |    |    			   
+7218 .|    |    |    |    |    |    			   
+7218 .|    |    |    |    |    |    			   
+7218 .|    |    |    |    |    |    				<cas:ldap_cn>PANDHU HUTOMO ADITYA</cas:ldap_cn>
+7218 .|    |    |    |    |    |    			   
+7218 .|    |    |    |    |    |    			
+7218 .|    |    |    |    |    |    		    
+7218 .|    |    |    |    |    |    			
+7218 .|    |    |    |    |    |    			   
+7218 .|    |    |    |    |    |    			   
+7218 .|    |    |    |    |    |    			   
+7218 .|    |    |    |    |    |    			   
+7218 .|    |    |    |    |    |    				<cas:peran_user>mahasiswa</cas:peran_user>
+7218 .|    |    |    |    |    |    			   
+7218 .|    |    |    |    |    |    			
+7218 .|    |    |    |    |    |    		    
+7218 .|    |    |    |    |    |    			
+7218 .|    |    |    |    |    |    			   
+7218 .|    |    |    |    |    |    			   
+7218 .|    |    |    |    |    |    			   
+7218 .|    |    |    |    |    |    			   
+7218 .|    |    |    |    |    |    				<cas:nama>Pandhu Hutomo Aditya</cas:nama>
+7218 .|    |    |    |    |    |    			   
+7218 .|    |    |    |    |    |    			
+7218 .|    |    |    |    |    |    		    
+7218 .|    |    |    |    |    |    			
+7218 .|    |    |    |    |    |    			   
+7218 .|    |    |    |    |    |    			   
+7218 .|    |    |    |    |    |    			   
+7218 .|    |    |    |    |    |    			   
+7218 .|    |    |    |    |    |    				<cas:npm>1206277426</cas:npm>
+7218 .|    |    |    |    |    |    			   
+7218 .|    |    |    |    |    |    			
+7218 .|    |    |    |    |    |    		    
+7218 .|    |    |    |    |    |    		</cas:attributes>
+7218 .|    |    |    |    |    |    
+7218 .|    |    |    |    |    |    
+7218 .|    |    |    |    |    |    
+7218 .|    |    |    |    |    |    	</cas:authenticationSuccess>
+7218 .|    |    |    |    |    |    </cas:serviceResponse>
+7218 .|    |    |    |    |    |    
+7218 .|    |    |    |    |    |     [CurlRequest.php:84]
+7218 .|    |    |    |    |    <= true
+7218 .|    |    |    |    <= true
+7218 .|    |    |    |    => CAS_Client::_readExtraAttributesCas20(DOMNodeList) [Client.php:3182]
+7218 .|    |    |    |    |    Found nested jasig style attributes [Client.php:3269]
+7218 .|    |    |    |    |    Attribute [ldap_cn] = PANDHU HUTOMO ADITYA [Client.php:3276]
+7218 .|    |    |    |    |    Attribute [peran_user] = mahasiswa [Client.php:3276]
+7218 .|    |    |    |    |    Attribute [nama] = Pandhu Hutomo Aditya [Client.php:3276]
+7218 .|    |    |    |    |    Attribute [npm] = 1206277426 [Client.php:3276]
+7218 .|    |    |    |    <= ''
+7218 .|    |    |    |    Storing Proxy List [Client.php:3191]
+7218 .|    |    |    |    => CAS_ProxyChain_AllowedList::isProxyListAllowed(array ()) [Client.php:3194]
+7218 .|    |    |    |    |    No proxies were found in the response [AllowedList.php:81]
+7218 .|    |    |    |    <= true
+7218 .|    |    |    |    => CAS_Client::_renameSession('ST-2926-yo0I2gIZAtBTq1Fegj9S-sso.ui.ac.id') [Client.php:3226]
+7218 .|    |    |    |    |    Killing session: h812l8ald1fn9qqgf7cn7bga07 [Client.php:3588]
+7218 .|    |    |    |    |    Starting session: ST-2926-yo0I2gIZAtBTq1Fegj9S-ssouiacid [Client.php:3592]
+7218 .|    |    |    |    |    Restoring old session vars [Client.php:3595]
+7218 .|    |    |    |    <= ''
+7218 .|    |    |    <= true
+7218 .|    |    |    CAS 2.0 ticket `ST-2926-yo0I2gIZAtBTq1Fegj9S-sso.ui.ac.id' was validated [Client.php:1416]
+7218 .|    |    |    => CAS_Client::getURL() [Client.php:1481]
+7218 .|    |    |    <= 'http://localhost/CASSSO/auth.php'
+7218 .|    |    |    Prepare redirect to : http://localhost/CASSSO/auth.php [Client.php:1481]
+7218 .|    |    |    => CAS_Client::getURL() [Client.php:1483]
+7218 .|    |    |    <= 'http://localhost/CASSSO/auth.php'
+7218 .|    |    |    exit()
+7218 .|    |    |    -
+7218 .|    |    -
+7218 .|    -
+E9C4 .START phpCAS-1.3.3+ ****************** [CAS.php:447]
+E9C4 .=> phpCAS::client('2.0', 'sso.ui.ac.id/cas2', 443, '') [auth.php:10]
+E9C4 .|    => CAS_Client::__construct('2.0', false, 'sso.ui.ac.id/cas2', 443, '', true) [CAS.php:340]
+E9C4 .|    |    Starting a new session ST-2926-yo0I2gIZAtBTq1Fegj9S-ssouiacid [Client.php:906]
+E9C4 .|    <= ''
+E9C4 .<= ''
+E9C4 .=> phpCAS::setNoCasServerValidation() [auth.php:19]
+E9C4 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1562]
+E9C4 .<= ''
+E9C4 .=> phpCAS::forceAuthentication() [auth.php:22]
+E9C4 .|    => CAS_Client::forceAuthentication() [CAS.php:1024]
+E9C4 .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+E9C4 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+E9C4 .|    |    |    |    user = `pandhu.hutomo' [Client.php:1585]
+E9C4 .|    |    |    <= true
+E9C4 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1380]
+E9C4 .|    |    <= true
+E9C4 .|    |    no need to authenticate [Client.php:1247]
+E9C4 .|    <= true
+E9C4 .<= ''
+AA67 .START phpCAS-1.3.3+ ****************** [CAS.php:447]
+AA67 .=> phpCAS::client('2.0', 'sso.ui.ac.id/cas2', 443, '') [auth.php:10]
+AA67 .|    => CAS_Client::__construct('2.0', false, 'sso.ui.ac.id/cas2', 443, '', true) [CAS.php:340]
+AA67 .|    |    Starting a new session ST-2926-yo0I2gIZAtBTq1Fegj9S-ssouiacid [Client.php:906]
+AA67 .|    |    Ticket 'ST-2929-WF9UqfwA20Ow9IPi1U96-sso.ui.ac.id' found [Client.php:988]
+AA67 .|    <= ''
+AA67 .<= ''
+AA67 .=> phpCAS::setNoCasServerValidation() [auth.php:19]
+AA67 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1562]
+AA67 .<= ''
+AA67 .=> phpCAS::forceAuthentication() [auth.php:22]
+AA67 .|    => CAS_Client::forceAuthentication() [CAS.php:1024]
+AA67 .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+AA67 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+AA67 .|    |    |    |    user = `pandhu.hutomo' [Client.php:1585]
+AA67 .|    |    |    <= true
+AA67 .|    |    |    ticket was present and will be discarded, use renewAuthenticate() [Client.php:1361]
+AA67 .|    |    |    => CAS_Client::getURL() [Client.php:1363]
+AA67 .|    |    |    |    Final URI: http://localhost/CASSSO/auth.php [Client.php:3472]
+AA67 .|    |    |    <= 'http://localhost/CASSSO/auth.php'
+AA67 .|    |    |    Prepare redirect to : http://localhost/CASSSO/auth.php [Client.php:1363]
+AA67 .|    |    |    => CAS_Client::getURL() [Client.php:1365]
+AA67 .|    |    |    <= 'http://localhost/CASSSO/auth.php'
+AA67 .|    |    |    exit()
+AA67 .|    |    |    -
+AA67 .|    |    -
+AA67 .|    -
+C7DD .START phpCAS-1.3.3+ ****************** [CAS.php:447]
+C7DD .=> phpCAS::client('2.0', 'sso.ui.ac.id/cas2', 443, '') [auth.php:10]
+C7DD .|    => CAS_Client::__construct('2.0', false, 'sso.ui.ac.id/cas2', 443, '', true) [CAS.php:340]
+C7DD .|    |    Starting a new session ST-2926-yo0I2gIZAtBTq1Fegj9S-ssouiacid [Client.php:906]
+C7DD .|    <= ''
+C7DD .<= ''
+C7DD .=> phpCAS::setNoCasServerValidation() [auth.php:19]
+C7DD .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1562]
+C7DD .<= ''
+C7DD .=> phpCAS::forceAuthentication() [auth.php:22]
+C7DD .|    => CAS_Client::forceAuthentication() [CAS.php:1024]
+C7DD .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+C7DD .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+C7DD .|    |    |    |    user = `pandhu.hutomo' [Client.php:1585]
+C7DD .|    |    |    <= true
+C7DD .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1380]
+C7DD .|    |    <= true
+C7DD .|    |    no need to authenticate [Client.php:1247]
+C7DD .|    <= true
+C7DD .<= ''
+7179 .START phpCAS-1.3.3+ ****************** [CAS.php:447]
+7179 .=> phpCAS::client('2.0', 'sso.ui.ac.id/cas2', 443, '') [auth.php:10]
+7179 .|    => CAS_Client::__construct('2.0', false, 'sso.ui.ac.id/cas2', 443, '', true) [CAS.php:340]
+7179 .|    |    Starting a new session pvfn7dekbd4c0tgr31i24f5902 [Client.php:906]
+7179 .|    <= ''
+7179 .<= ''
+7179 .=> phpCAS::setNoCasServerValidation() [auth.php:19]
+7179 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1562]
+7179 .<= ''
+7179 .=> phpCAS::forceAuthentication() [auth.php:22]
+7179 .|    => CAS_Client::forceAuthentication() [CAS.php:1024]
+7179 .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+7179 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+7179 .|    |    |    |    no user found [Client.php:1598]
+7179 .|    |    |    <= false
+7179 .|    |    |    no ticket found [Client.php:1457]
+7179 .|    |    <= false
+7179 .|    |    => CAS_Client::redirectToCas(false) [Client.php:1254]
+7179 .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1619]
+7179 .|    |    |    |    => CAS_Client::getURL() [Client.php:342]
+7179 .|    |    |    |    |    Final URI: http://localhost/gudang-proyek/auth/auth.php [Client.php:3472]
+7179 .|    |    |    |    <= 'http://localhost/gudang-proyek/auth/auth.php'
+7179 .|    |    |    <= 'https://sso.ui.ac.id/cas2/login?service=http%3A%2F%2Flocalhost%2Fgudang-proyek%2Fauth%2Fauth.php'
+7179 .|    |    |    Redirect to : https://sso.ui.ac.id/cas2/login?service=http%3A%2F%2Flocalhost%2Fgudang-proyek%2Fauth%2Fauth.php [Client.php:1626]
+7179 .|    |    |    exit()
+7179 .|    |    |    -
+7179 .|    |    -
+7179 .|    -
+53B3 .START phpCAS-1.3.3+ ****************** [CAS.php:447]
+53B3 .=> phpCAS::client('2.0', 'sso.ui.ac.id/cas2', 443, '') [auth.php:10]
+53B3 .|    => CAS_Client::__construct('2.0', false, 'sso.ui.ac.id/cas2', 443, '', true) [CAS.php:340]
+53B3 .|    |    Starting a new session pvfn7dekbd4c0tgr31i24f5902 [Client.php:906]
+53B3 .|    |    Ticket 'ST-4566-aXg9tem1fiMeDscg0tIG-sso.ui.ac.id' found [Client.php:988]
+53B3 .|    <= ''
+53B3 .<= ''
+53B3 .=> phpCAS::setNoCasServerValidation() [auth.php:19]
+53B3 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1562]
+53B3 .<= ''
+53B3 .=> phpCAS::forceAuthentication() [auth.php:22]
+53B3 .|    => CAS_Client::forceAuthentication() [CAS.php:1024]
+53B3 .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+53B3 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+53B3 .|    |    |    |    no user found [Client.php:1598]
+53B3 .|    |    |    <= false
+53B3 .|    |    |    CAS 2.0 ticket `ST-4566-aXg9tem1fiMeDscg0tIG-sso.ui.ac.id' is present [Client.php:1410]
+53B3 .|    |    |    => CAS_Client::validateCAS20('', NULL, NULL) [Client.php:1413]
+53B3 .|    |    |    |     [Client.php:3107]
+53B3 .|    |    |    |    => CAS_Client::getServerServiceValidateURL() [Client.php:3114]
+53B3 .|    |    |    |    |    => CAS_Client::getURL() [Client.php:453]
+53B3 .|    |    |    |    |    |    Final URI: http://localhost/gudang-proyek/auth/auth.php [Client.php:3472]
+53B3 .|    |    |    |    |    <= 'http://localhost/gudang-proyek/auth/auth.php'
+53B3 .|    |    |    |    <= 'https://sso.ui.ac.id/cas2/serviceValidate?service=http%3A%2F%2Flocalhost%2Fgudang-proyek%2Fauth%2Fauth.php'
+53B3 .|    |    |    |    => CAS_Client::_readURL('https://sso.ui.ac.id/cas2/serviceValidate?service=http%3A%2F%2Flocalhost%2Fgudang-proyek%2Fauth%2Fauth.php&ticket=ST-4566-aXg9tem1fiMeDscg0tIG-sso.ui.ac.id', NULL, NULL, NULL) [Client.php:3124]
+53B3 .|    |    |    |    |    => CAS_Request_CurlRequest::sendRequest() [AbstractRequest.php:242]
+53B3 .|    |    |    |    |    |    Response Body: 
+53B3 .|    |    |    |    |    |    
+53B3 .|    |    |    |    |    |    
+53B3 .|    |    |    |    |    |    
+53B3 .|    |    |    |    |    |    
+53B3 .|    |    |    |    |    |    <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+53B3 .|    |    |    |    |    |    	<cas:authenticationSuccess>
+53B3 .|    |    |    |    |    |    		<cas:user>pandhu.hutomo</cas:user>
+53B3 .|    |    |    |    |    |    
+53B3 .|    |    |    |    |    |    		<cas:attributes>
+53B3 .|    |    |    |    |    |    		    
+53B3 .|    |    |    |    |    |    			
+53B3 .|    |    |    |    |    |    			   
+53B3 .|    |    |    |    |    |    			   
+53B3 .|    |    |    |    |    |    			   
+53B3 .|    |    |    |    |    |    			   
+53B3 .|    |    |    |    |    |    				<cas:ldap_cn>PANDHU HUTOMO ADITYA</cas:ldap_cn>
+53B3 .|    |    |    |    |    |    			   
+53B3 .|    |    |    |    |    |    			
+53B3 .|    |    |    |    |    |    		    
+53B3 .|    |    |    |    |    |    			
+53B3 .|    |    |    |    |    |    			   
+53B3 .|    |    |    |    |    |    			   
+53B3 .|    |    |    |    |    |    				
+53B3 .|    |    |    |    |    |                                      <cas:kd_org>01.00.12.01</cas:kd_org> 
+53B3 .|    |    |    |    |    |    				
+53B3 .|    |    |    |    |    |    			   
+53B3 .|    |    |    |    |    |    			   
+53B3 .|    |    |    |    |    |    			   
+53B3 .|    |    |    |    |    |    			
+53B3 .|    |    |    |    |    |    		    
+53B3 .|    |    |    |    |    |    			
+53B3 .|    |    |    |    |    |    			   
+53B3 .|    |    |    |    |    |    			   
+53B3 .|    |    |    |    |    |    			   
+53B3 .|    |    |    |    |    |    			   
+53B3 .|    |    |    |    |    |    				<cas:peran_user>mahasiswa</cas:peran_user>
+53B3 .|    |    |    |    |    |    			   
+53B3 .|    |    |    |    |    |    			
+53B3 .|    |    |    |    |    |    		    
+53B3 .|    |    |    |    |    |    			
+53B3 .|    |    |    |    |    |    			   
+53B3 .|    |    |    |    |    |    			   
+53B3 .|    |    |    |    |    |    			   
+53B3 .|    |    |    |    |    |    			   
+53B3 .|    |    |    |    |    |    				<cas:nama>Pandhu Hutomo Aditya</cas:nama>
+53B3 .|    |    |    |    |    |    			   
+53B3 .|    |    |    |    |    |    			
+53B3 .|    |    |    |    |    |    		    
+53B3 .|    |    |    |    |    |    			
+53B3 .|    |    |    |    |    |    			   
+53B3 .|    |    |    |    |    |    			   
+53B3 .|    |    |    |    |    |    			   
+53B3 .|    |    |    |    |    |    			   
+53B3 .|    |    |    |    |    |    				<cas:npm>1206277426</cas:npm>
+53B3 .|    |    |    |    |    |    			   
+53B3 .|    |    |    |    |    |    			
+53B3 .|    |    |    |    |    |    		    
+53B3 .|    |    |    |    |    |    		</cas:attributes>
+53B3 .|    |    |    |    |    |    
+53B3 .|    |    |    |    |    |    
+53B3 .|    |    |    |    |    |    
+53B3 .|    |    |    |    |    |    	</cas:authenticationSuccess>
+53B3 .|    |    |    |    |    |    </cas:serviceResponse>
+53B3 .|    |    |    |    |    |    
+53B3 .|    |    |    |    |    |     [CurlRequest.php:84]
+53B3 .|    |    |    |    |    <= true
+53B3 .|    |    |    |    <= true
+53B3 .|    |    |    |    => CAS_Client::_readExtraAttributesCas20(DOMNodeList) [Client.php:3182]
+53B3 .|    |    |    |    |    Found nested jasig style attributes [Client.php:3269]
+53B3 .|    |    |    |    |    Attribute [ldap_cn] = PANDHU HUTOMO ADITYA [Client.php:3276]
+53B3 .|    |    |    |    |    Attribute [kd_org] = 01.00.12.01 [Client.php:3276]
+53B3 .|    |    |    |    |    Attribute [peran_user] = mahasiswa [Client.php:3276]
+53B3 .|    |    |    |    |    Attribute [nama] = Pandhu Hutomo Aditya [Client.php:3276]
+53B3 .|    |    |    |    |    Attribute [npm] = 1206277426 [Client.php:3276]
+53B3 .|    |    |    |    <= ''
+53B3 .|    |    |    |    Storing Proxy List [Client.php:3191]
+53B3 .|    |    |    |    => CAS_ProxyChain_AllowedList::isProxyListAllowed(array ()) [Client.php:3194]
+53B3 .|    |    |    |    |    No proxies were found in the response [AllowedList.php:81]
+53B3 .|    |    |    |    <= true
+53B3 .|    |    |    |    => CAS_Client::_renameSession('ST-4566-aXg9tem1fiMeDscg0tIG-sso.ui.ac.id') [Client.php:3226]
+53B3 .|    |    |    |    |    Killing session: pvfn7dekbd4c0tgr31i24f5902 [Client.php:3588]
+53B3 .|    |    |    |    |    Starting session: ST-4566-aXg9tem1fiMeDscg0tIG-ssouiacid [Client.php:3592]
+53B3 .|    |    |    |    |    Restoring old session vars [Client.php:3595]
+53B3 .|    |    |    |    <= ''
+53B3 .|    |    |    <= true
+53B3 .|    |    |    CAS 2.0 ticket `ST-4566-aXg9tem1fiMeDscg0tIG-sso.ui.ac.id' was validated [Client.php:1416]
+53B3 .|    |    |    => CAS_Client::getURL() [Client.php:1481]
+53B3 .|    |    |    <= 'http://localhost/gudang-proyek/auth/auth.php'
+53B3 .|    |    |    Prepare redirect to : http://localhost/gudang-proyek/auth/auth.php [Client.php:1481]
+53B3 .|    |    |    => CAS_Client::getURL() [Client.php:1483]
+53B3 .|    |    |    <= 'http://localhost/gudang-proyek/auth/auth.php'
+53B3 .|    |    |    exit()
+53B3 .|    |    |    -
+53B3 .|    |    -
+B899 .START phpCAS-1.3.3+ ****************** [CAS.php:447]
+53B3 .|    -
+B899 .=> phpCAS::client('2.0', 'sso.ui.ac.id/cas2', 443, '') [auth.php:10]
+B899 .|    => CAS_Client::__construct('2.0', false, 'sso.ui.ac.id/cas2', 443, '', true) [CAS.php:340]
+B899 .|    |    Starting a new session ST-4566-aXg9tem1fiMeDscg0tIG-ssouiacid [Client.php:906]
+B899 .|    <= ''
+B899 .<= ''
+B899 .=> phpCAS::setNoCasServerValidation() [auth.php:19]
+B899 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1562]
+B899 .<= ''
+B899 .=> phpCAS::forceAuthentication() [auth.php:22]
+B899 .|    => CAS_Client::forceAuthentication() [CAS.php:1024]
+B899 .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+B899 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+B899 .|    |    |    |    user = `pandhu.hutomo' [Client.php:1585]
+B899 .|    |    |    <= true
+B899 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1380]
+B899 .|    |    <= true
+B899 .|    |    no need to authenticate [Client.php:1247]
+B899 .|    <= true
+B899 .<= ''
+AC8C .START phpCAS-1.3.3+ ****************** [CAS.php:447]
+AC8C .=> phpCAS::client('2.0', 'sso.ui.ac.id/cas2', 443, '') [auth.php:10]
+AC8C .|    => CAS_Client::__construct('2.0', false, 'sso.ui.ac.id/cas2', 443, '', true) [CAS.php:340]
+AC8C .|    |    Starting a new session ST-4566-aXg9tem1fiMeDscg0tIG-ssouiacid [Client.php:906]
+AC8C .|    |    Ticket 'ST-4567-u2EfgOoVWgnlqEeWkqjL-sso.ui.ac.id' found [Client.php:988]
+AC8C .|    <= ''
+AC8C .<= ''
+AC8C .=> phpCAS::setNoCasServerValidation() [auth.php:19]
+AC8C .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1562]
+AC8C .<= ''
+AC8C .=> phpCAS::forceAuthentication() [auth.php:22]
+AC8C .|    => CAS_Client::forceAuthentication() [CAS.php:1024]
+AC8C .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+AC8C .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+AC8C .|    |    |    |    user = `pandhu.hutomo' [Client.php:1585]
+AC8C .|    |    |    <= true
+AC8C .|    |    |    ticket was present and will be discarded, use renewAuthenticate() [Client.php:1361]
+AC8C .|    |    |    => CAS_Client::getURL() [Client.php:1363]
+AC8C .|    |    |    |    Final URI: http://localhost/gudang-proyek/auth/auth.php [Client.php:3472]
+AC8C .|    |    |    <= 'http://localhost/gudang-proyek/auth/auth.php'
+AC8C .|    |    |    Prepare redirect to : http://localhost/gudang-proyek/auth/auth.php [Client.php:1363]
+AC8C .|    |    |    => CAS_Client::getURL() [Client.php:1365]
+AC8C .|    |    |    <= 'http://localhost/gudang-proyek/auth/auth.php'
+AC8C .|    |    |    exit()
+AC8C .|    |    |    -
+AC8C .|    |    -
+CE13 .START phpCAS-1.3.3+ ****************** [CAS.php:447]
+AC8C .|    -
+CE13 .=> phpCAS::client('2.0', 'sso.ui.ac.id/cas2', 443, '') [auth.php:10]
+CE13 .|    => CAS_Client::__construct('2.0', false, 'sso.ui.ac.id/cas2', 443, '', true) [CAS.php:340]
+CE13 .|    |    Starting a new session ST-4566-aXg9tem1fiMeDscg0tIG-ssouiacid [Client.php:906]
+CE13 .|    <= ''
+CE13 .<= ''
+CE13 .=> phpCAS::setNoCasServerValidation() [auth.php:19]
+CE13 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1562]
+CE13 .<= ''
+CE13 .=> phpCAS::forceAuthentication() [auth.php:22]
+CE13 .|    => CAS_Client::forceAuthentication() [CAS.php:1024]
+CE13 .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+CE13 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+CE13 .|    |    |    |    user = `pandhu.hutomo' [Client.php:1585]
+CE13 .|    |    |    <= true
+CE13 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1380]
+CE13 .|    |    <= true
+CE13 .|    |    no need to authenticate [Client.php:1247]
+CE13 .|    <= true
+CE13 .<= ''
+7BD5 .START phpCAS-1.3.3+ ****************** [CAS.php:447]
+7BD5 .=> phpCAS::client('2.0', 'sso.ui.ac.id/cas2', 443, '') [auth.php:10]
+7BD5 .|    => CAS_Client::__construct('2.0', false, 'sso.ui.ac.id/cas2', 443, '', true) [CAS.php:340]
+7BD5 .|    |    Starting a new session ST-4566-aXg9tem1fiMeDscg0tIG-ssouiacid [Client.php:906]
+7BD5 .|    |    Ticket 'ST-4570-WxC5dKaFJkezHZdGcIOh-sso.ui.ac.id' found [Client.php:988]
+7BD5 .|    <= ''
+7BD5 .<= ''
+7BD5 .=> phpCAS::setNoCasServerValidation() [auth.php:19]
+7BD5 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1562]
+7BD5 .<= ''
+7BD5 .=> phpCAS::forceAuthentication() [auth.php:22]
+7BD5 .|    => CAS_Client::forceAuthentication() [CAS.php:1024]
+7BD5 .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+7BD5 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+7BD5 .|    |    |    |    user = `pandhu.hutomo' [Client.php:1585]
+7BD5 .|    |    |    <= true
+7BD5 .|    |    |    ticket was present and will be discarded, use renewAuthenticate() [Client.php:1361]
+7BD5 .|    |    |    => CAS_Client::getURL() [Client.php:1363]
+7BD5 .|    |    |    |    Final URI: http://localhost/gudang-proyek/auth/auth.php [Client.php:3472]
+7BD5 .|    |    |    <= 'http://localhost/gudang-proyek/auth/auth.php'
+7BD5 .|    |    |    Prepare redirect to : http://localhost/gudang-proyek/auth/auth.php [Client.php:1363]
+7BD5 .|    |    |    => CAS_Client::getURL() [Client.php:1365]
+7BD5 .|    |    |    <= 'http://localhost/gudang-proyek/auth/auth.php'
+7BD5 .|    |    |    exit()
+7BD5 .|    |    |    -
+99B8 .START phpCAS-1.3.3+ ****************** [CAS.php:447]
+7BD5 .|    |    -
+99B8 .=> phpCAS::client('2.0', 'sso.ui.ac.id/cas2', 443, '') [auth.php:10]
+7BD5 .|    -
+99B8 .|    => CAS_Client::__construct('2.0', false, 'sso.ui.ac.id/cas2', 443, '', true) [CAS.php:340]
+99B8 .|    |    Starting a new session ST-4566-aXg9tem1fiMeDscg0tIG-ssouiacid [Client.php:906]
+99B8 .|    <= ''
+99B8 .<= ''
+99B8 .=> phpCAS::setNoCasServerValidation() [auth.php:19]
+99B8 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1562]
+99B8 .<= ''
+99B8 .=> phpCAS::forceAuthentication() [auth.php:22]
+99B8 .|    => CAS_Client::forceAuthentication() [CAS.php:1024]
+99B8 .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+99B8 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+99B8 .|    |    |    |    user = `pandhu.hutomo' [Client.php:1585]
+99B8 .|    |    |    <= true
+99B8 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1380]
+99B8 .|    |    <= true
+99B8 .|    |    no need to authenticate [Client.php:1247]
+99B8 .|    <= true
+99B8 .<= ''
+CE4F .START phpCAS-1.3.3+ ****************** [CAS.php:447]
+CE4F .=> phpCAS::client('2.0', 'sso.ui.ac.id/cas2', 443, '') [auth.php:10]
+CE4F .|    => CAS_Client::__construct('2.0', false, 'sso.ui.ac.id/cas2', 443, '', true) [CAS.php:340]
+CE4F .|    |    Starting a new session ST-4566-aXg9tem1fiMeDscg0tIG-ssouiacid [Client.php:906]
+CE4F .|    <= ''
+CE4F .<= ''
+CE4F .=> phpCAS::setNoCasServerValidation() [auth.php:19]
+CE4F .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1562]
+CE4F .<= ''
+CE4F .=> phpCAS::forceAuthentication() [auth.php:22]
+CE4F .|    => CAS_Client::forceAuthentication() [CAS.php:1024]
+CE4F .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+CE4F .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+CE4F .|    |    |    |    user = `pandhu.hutomo' [Client.php:1585]
+CE4F .|    |    |    <= true
+CE4F .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1380]
+CE4F .|    |    <= true
+CE4F .|    |    no need to authenticate [Client.php:1247]
+CE4F .|    <= true
+CE4F .<= ''
+1543 .START phpCAS-1.3.3+ ****************** [CAS.php:447]
+1543 .=> phpCAS::client('2.0', 'sso.ui.ac.id/cas2', 443, '') [auth.php:10]
+1543 .|    => CAS_Client::__construct('2.0', false, 'sso.ui.ac.id/cas2', 443, '', true) [CAS.php:340]
+1543 .|    |    Starting a new session ST-4566-aXg9tem1fiMeDscg0tIG-ssouiacid [Client.php:906]
+1543 .|    <= ''
+1543 .<= ''
+1543 .=> phpCAS::setNoCasServerValidation() [auth.php:19]
+1543 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1562]
+1543 .<= ''
+1543 .=> phpCAS::forceAuthentication() [auth.php:22]
+1543 .|    => CAS_Client::forceAuthentication() [CAS.php:1024]
+1543 .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+1543 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+1543 .|    |    |    |    user = `pandhu.hutomo' [Client.php:1585]
+1543 .|    |    |    <= true
+1543 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1380]
+1543 .|    |    <= true
+1543 .|    |    no need to authenticate [Client.php:1247]
+1543 .|    <= true
+1543 .<= ''
+1E75 .START phpCAS-1.3.3+ ****************** [CAS.php:447]
+1E75 .=> phpCAS::client('2.0', 'sso.ui.ac.id/cas2', 443, '') [auth.php:10]
+1E75 .|    => CAS_Client::__construct('2.0', false, 'sso.ui.ac.id/cas2', 443, '', true) [CAS.php:340]
+1E75 .|    |    Starting a new session ST-4566-aXg9tem1fiMeDscg0tIG-ssouiacid [Client.php:906]
+1E75 .|    <= ''
+1E75 .<= ''
+1E75 .=> phpCAS::setNoCasServerValidation() [auth.php:19]
+1E75 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1562]
+1E75 .<= ''
+1E75 .=> phpCAS::forceAuthentication() [auth.php:22]
+1E75 .|    => CAS_Client::forceAuthentication() [CAS.php:1024]
+1E75 .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+1E75 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+1E75 .|    |    |    |    user = `pandhu.hutomo' [Client.php:1585]
+1E75 .|    |    |    <= true
+1E75 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1380]
+1E75 .|    |    <= true
+1E75 .|    |    no need to authenticate [Client.php:1247]
+1E75 .|    <= true
+1E75 .<= ''
+1FB1 .START phpCAS-1.3.3+ ****************** [CAS.php:447]
+1FB1 .=> phpCAS::client('2.0', 'sso.ui.ac.id/cas2', 443, '') [auth.php:10]
+1FB1 .|    => CAS_Client::__construct('2.0', false, 'sso.ui.ac.id/cas2', 443, '', true) [CAS.php:340]
+1FB1 .|    |    Starting a new session ST-4566-aXg9tem1fiMeDscg0tIG-ssouiacid [Client.php:906]
+1FB1 .|    <= ''
+1FB1 .<= ''
+1FB1 .=> phpCAS::setNoCasServerValidation() [auth.php:19]
+1FB1 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1562]
+1FB1 .<= ''
+1FB1 .=> phpCAS::forceAuthentication() [auth.php:22]
+1FB1 .|    => CAS_Client::forceAuthentication() [CAS.php:1024]
+1FB1 .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+1FB1 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+1FB1 .|    |    |    |    user = `pandhu.hutomo' [Client.php:1585]
+1FB1 .|    |    |    <= true
+1FB1 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1380]
+1FB1 .|    |    <= true
+1FB1 .|    |    no need to authenticate [Client.php:1247]
+1FB1 .|    <= true
+1FB1 .<= ''
+1FB1 .=> phpCAS::logout() [auth.php:28]
+1FB1 .|    => CAS_Client::logout(array ()) [CAS.php:1368]
+1FB1 .|    |    Prepare redirect to : https://sso.ui.ac.id/cas2/logout [Client.php:1659]
+1FB1 .|    |    exit()
+1FB1 .|    |    -
+1FB1 .|    -
+4F16 .START phpCAS-1.3.3+ ****************** [CAS.php:447]
+4F16 .=> phpCAS::client('2.0', 'sso.ui.ac.id/cas2', 443, '') [auth.php:10]
+4F16 .|    => CAS_Client::__construct('2.0', false, 'sso.ui.ac.id/cas2', 443, '', true) [CAS.php:340]
+4F16 .|    |    Starting a new session ST-4566-aXg9tem1fiMeDscg0tIG-ssouiacid [Client.php:906]
+4F16 .|    <= ''
+4F16 .<= ''
+4F16 .=> phpCAS::setNoCasServerValidation() [auth.php:19]
+4F16 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1562]
+4F16 .<= ''
+4F16 .=> phpCAS::forceAuthentication() [auth.php:22]
+4F16 .|    => CAS_Client::forceAuthentication() [CAS.php:1024]
+4F16 .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+4F16 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+4F16 .|    |    |    |    no user found [Client.php:1598]
+4F16 .|    |    |    <= false
+4F16 .|    |    |    no ticket found [Client.php:1457]
+4F16 .|    |    <= false
+4F16 .|    |    => CAS_Client::redirectToCas(false) [Client.php:1254]
+4F16 .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1619]
+4F16 .|    |    |    |    => CAS_Client::getURL() [Client.php:342]
+4F16 .|    |    |    |    |    Final URI: http://localhost/gudang-proyek/auth/auth.php [Client.php:3472]
+4F16 .|    |    |    |    <= 'http://localhost/gudang-proyek/auth/auth.php'
+4F16 .|    |    |    <= 'https://sso.ui.ac.id/cas2/login?service=http%3A%2F%2Flocalhost%2Fgudang-proyek%2Fauth%2Fauth.php'
+4F16 .|    |    |    Redirect to : https://sso.ui.ac.id/cas2/login?service=http%3A%2F%2Flocalhost%2Fgudang-proyek%2Fauth%2Fauth.php [Client.php:1626]
+4F16 .|    |    |    exit()
+4F16 .|    |    |    -
+4F16 .|    |    -
+4F16 .|    -
+E46E .START phpCAS-1.3.3+ ****************** [CAS.php:447]
+E46E .=> phpCAS::client('2.0', 'sso.ui.ac.id/cas2', 443, '') [auth.php:10]
+E46E .|    => CAS_Client::__construct('2.0', false, 'sso.ui.ac.id/cas2', 443, '', true) [CAS.php:340]
+E46E .|    |    Starting a new session ST-4566-aXg9tem1fiMeDscg0tIG-ssouiacid [Client.php:906]
+E46E .|    |    Ticket 'ST-4571-BsEcTOVbhhAbBkUgkZGU-sso.ui.ac.id' found [Client.php:988]
+E46E .|    <= ''
+E46E .<= ''
+E46E .=> phpCAS::setNoCasServerValidation() [auth.php:19]
+E46E .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1562]
+E46E .<= ''
+E46E .=> phpCAS::forceAuthentication() [auth.php:22]
+E46E .|    => CAS_Client::forceAuthentication() [CAS.php:1024]
+E46E .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+E46E .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+E46E .|    |    |    |    no user found [Client.php:1598]
+E46E .|    |    |    <= false
+E46E .|    |    |    CAS 2.0 ticket `ST-4571-BsEcTOVbhhAbBkUgkZGU-sso.ui.ac.id' is present [Client.php:1410]
+E46E .|    |    |    => CAS_Client::validateCAS20('', NULL, NULL) [Client.php:1413]
+E46E .|    |    |    |     [Client.php:3107]
+E46E .|    |    |    |    => CAS_Client::getServerServiceValidateURL() [Client.php:3114]
+E46E .|    |    |    |    |    => CAS_Client::getURL() [Client.php:453]
+E46E .|    |    |    |    |    |    Final URI: http://localhost/gudang-proyek/auth/auth.php [Client.php:3472]
+E46E .|    |    |    |    |    <= 'http://localhost/gudang-proyek/auth/auth.php'
+E46E .|    |    |    |    <= 'https://sso.ui.ac.id/cas2/serviceValidate?service=http%3A%2F%2Flocalhost%2Fgudang-proyek%2Fauth%2Fauth.php'
+E46E .|    |    |    |    => CAS_Client::_readURL('https://sso.ui.ac.id/cas2/serviceValidate?service=http%3A%2F%2Flocalhost%2Fgudang-proyek%2Fauth%2Fauth.php&ticket=ST-4571-BsEcTOVbhhAbBkUgkZGU-sso.ui.ac.id', NULL, NULL, NULL) [Client.php:3124]
+E46E .|    |    |    |    |    => CAS_Request_CurlRequest::sendRequest() [AbstractRequest.php:242]
+E46E .|    |    |    |    |    |    Response Body: 
+E46E .|    |    |    |    |    |    
+E46E .|    |    |    |    |    |    
+E46E .|    |    |    |    |    |    
+E46E .|    |    |    |    |    |    
+E46E .|    |    |    |    |    |    <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+E46E .|    |    |    |    |    |    	<cas:authenticationSuccess>
+E46E .|    |    |    |    |    |    		<cas:user>pandhu.hutomo</cas:user>
+E46E .|    |    |    |    |    |    
+E46E .|    |    |    |    |    |    		<cas:attributes>
+E46E .|    |    |    |    |    |    		    
+E46E .|    |    |    |    |    |    			
+E46E .|    |    |    |    |    |    			   
+E46E .|    |    |    |    |    |    			   
+E46E .|    |    |    |    |    |    			   
+E46E .|    |    |    |    |    |    			   
+E46E .|    |    |    |    |    |    				<cas:ldap_cn>PANDHU HUTOMO ADITYA</cas:ldap_cn>
+E46E .|    |    |    |    |    |    			   
+E46E .|    |    |    |    |    |    			
+E46E .|    |    |    |    |    |    		    
+E46E .|    |    |    |    |    |    			
+E46E .|    |    |    |    |    |    			   
+E46E .|    |    |    |    |    |    			   
+E46E .|    |    |    |    |    |    				
+E46E .|    |    |    |    |    |                                      <cas:kd_org>01.00.12.01</cas:kd_org> 
+E46E .|    |    |    |    |    |    				
+E46E .|    |    |    |    |    |    			   
+E46E .|    |    |    |    |    |    			   
+E46E .|    |    |    |    |    |    			   
+E46E .|    |    |    |    |    |    			
+E46E .|    |    |    |    |    |    		    
+E46E .|    |    |    |    |    |    			
+E46E .|    |    |    |    |    |    			   
+E46E .|    |    |    |    |    |    			   
+E46E .|    |    |    |    |    |    			   
+E46E .|    |    |    |    |    |    			   
+E46E .|    |    |    |    |    |    				<cas:peran_user>mahasiswa</cas:peran_user>
+E46E .|    |    |    |    |    |    			   
+E46E .|    |    |    |    |    |    			
+E46E .|    |    |    |    |    |    		    
+E46E .|    |    |    |    |    |    			
+E46E .|    |    |    |    |    |    			   
+E46E .|    |    |    |    |    |    			   
+E46E .|    |    |    |    |    |    			   
+E46E .|    |    |    |    |    |    			   
+E46E .|    |    |    |    |    |    				<cas:nama>Pandhu Hutomo Aditya</cas:nama>
+E46E .|    |    |    |    |    |    			   
+E46E .|    |    |    |    |    |    			
+E46E .|    |    |    |    |    |    		    
+E46E .|    |    |    |    |    |    			
+E46E .|    |    |    |    |    |    			   
+E46E .|    |    |    |    |    |    			   
+E46E .|    |    |    |    |    |    			   
+E46E .|    |    |    |    |    |    			   
+E46E .|    |    |    |    |    |    				<cas:npm>1206277426</cas:npm>
+E46E .|    |    |    |    |    |    			   
+E46E .|    |    |    |    |    |    			
+E46E .|    |    |    |    |    |    		    
+E46E .|    |    |    |    |    |    		</cas:attributes>
+E46E .|    |    |    |    |    |    
+E46E .|    |    |    |    |    |    
+E46E .|    |    |    |    |    |    
+E46E .|    |    |    |    |    |    	</cas:authenticationSuccess>
+E46E .|    |    |    |    |    |    </cas:serviceResponse>
+E46E .|    |    |    |    |    |    
+E46E .|    |    |    |    |    |     [CurlRequest.php:84]
+E46E .|    |    |    |    |    <= true
+E46E .|    |    |    |    <= true
+E46E .|    |    |    |    => CAS_Client::_readExtraAttributesCas20(DOMNodeList) [Client.php:3182]
+E46E .|    |    |    |    |    Found nested jasig style attributes [Client.php:3269]
+E46E .|    |    |    |    |    Attribute [ldap_cn] = PANDHU HUTOMO ADITYA [Client.php:3276]
+E46E .|    |    |    |    |    Attribute [kd_org] = 01.00.12.01 [Client.php:3276]
+E46E .|    |    |    |    |    Attribute [peran_user] = mahasiswa [Client.php:3276]
+E46E .|    |    |    |    |    Attribute [nama] = Pandhu Hutomo Aditya [Client.php:3276]
+E46E .|    |    |    |    |    Attribute [npm] = 1206277426 [Client.php:3276]
+E46E .|    |    |    |    <= ''
+E46E .|    |    |    |    Storing Proxy List [Client.php:3191]
+E46E .|    |    |    |    => CAS_ProxyChain_AllowedList::isProxyListAllowed(array ()) [Client.php:3194]
+E46E .|    |    |    |    |    No proxies were found in the response [AllowedList.php:81]
+E46E .|    |    |    |    <= true
+E46E .|    |    |    |    => CAS_Client::_renameSession('ST-4571-BsEcTOVbhhAbBkUgkZGU-sso.ui.ac.id') [Client.php:3226]
+E46E .|    |    |    |    |    Killing session: ST-4566-aXg9tem1fiMeDscg0tIG-ssouiacid [Client.php:3588]
+E46E .|    |    |    |    |    Starting session: ST-4571-BsEcTOVbhhAbBkUgkZGU-ssouiacid [Client.php:3592]
+E46E .|    |    |    |    |    Restoring old session vars [Client.php:3595]
+E46E .|    |    |    |    <= ''
+E46E .|    |    |    <= true
+E46E .|    |    |    CAS 2.0 ticket `ST-4571-BsEcTOVbhhAbBkUgkZGU-sso.ui.ac.id' was validated [Client.php:1416]
+E46E .|    |    |    => CAS_Client::getURL() [Client.php:1481]
+E46E .|    |    |    <= 'http://localhost/gudang-proyek/auth/auth.php'
+E46E .|    |    |    Prepare redirect to : http://localhost/gudang-proyek/auth/auth.php [Client.php:1481]
+E46E .|    |    |    => CAS_Client::getURL() [Client.php:1483]
+E46E .|    |    |    <= 'http://localhost/gudang-proyek/auth/auth.php'
+E46E .|    |    |    exit()
+E46E .|    |    |    -
+E46E .|    |    -
+5662 .START phpCAS-1.3.3+ ****************** [CAS.php:447]
+E46E .|    -
+5662 .=> phpCAS::client('2.0', 'sso.ui.ac.id/cas2', 443, '') [auth.php:10]
+5662 .|    => CAS_Client::__construct('2.0', false, 'sso.ui.ac.id/cas2', 443, '', true) [CAS.php:340]
+5662 .|    |    Starting a new session ST-4571-BsEcTOVbhhAbBkUgkZGU-ssouiacid [Client.php:906]
+5662 .|    <= ''
+5662 .<= ''
+5662 .=> phpCAS::setNoCasServerValidation() [auth.php:19]
+5662 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1562]
+5662 .<= ''
+5662 .=> phpCAS::forceAuthentication() [auth.php:22]
+5662 .|    => CAS_Client::forceAuthentication() [CAS.php:1024]
+5662 .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+5662 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+5662 .|    |    |    |    user = `pandhu.hutomo' [Client.php:1585]
+5662 .|    |    |    <= true
+5662 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1380]
+5662 .|    |    <= true
+5662 .|    |    no need to authenticate [Client.php:1247]
+5662 .|    <= true
+5662 .<= ''
+EAD2 .START phpCAS-1.3.3+ ****************** [CAS.php:447]
+EAD2 .=> phpCAS::client('2.0', 'sso.ui.ac.id/cas2', 443, '') [auth.php:10]
+EAD2 .|    => CAS_Client::__construct('2.0', false, 'sso.ui.ac.id/cas2', 443, '', true) [CAS.php:340]
+EAD2 .|    |    Starting a new session ST-4571-BsEcTOVbhhAbBkUgkZGU-ssouiacid [Client.php:906]
+EAD2 .|    <= ''
+EAD2 .<= ''
+EAD2 .=> phpCAS::setNoCasServerValidation() [auth.php:19]
+EAD2 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1562]
+EAD2 .<= ''
+EAD2 .=> phpCAS::forceAuthentication() [auth.php:22]
+EAD2 .|    => CAS_Client::forceAuthentication() [CAS.php:1024]
+EAD2 .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+EAD2 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+EAD2 .|    |    |    |    user = `pandhu.hutomo' [Client.php:1585]
+EAD2 .|    |    |    <= true
+EAD2 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1380]
+EAD2 .|    |    <= true
+EAD2 .|    |    no need to authenticate [Client.php:1247]
+EAD2 .|    <= true
+EAD2 .<= ''
+9467 .START phpCAS-1.3.3+ ****************** [CAS.php:447]
+9467 .=> phpCAS::client('2.0', 'sso.ui.ac.id/cas2', 443, '') [auth.php:10]
+9467 .|    => CAS_Client::__construct('2.0', false, 'sso.ui.ac.id/cas2', 443, '', true) [CAS.php:340]
+9467 .|    |    Starting a new session ST-4571-BsEcTOVbhhAbBkUgkZGU-ssouiacid [Client.php:906]
+9467 .|    <= ''
+9467 .<= ''
+9467 .=> phpCAS::setNoCasServerValidation() [auth.php:19]
+9467 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1562]
+9467 .<= ''
+9467 .=> phpCAS::forceAuthentication() [auth.php:22]
+9467 .|    => CAS_Client::forceAuthentication() [CAS.php:1024]
+9467 .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+9467 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+9467 .|    |    |    |    user = `pandhu.hutomo' [Client.php:1585]
+9467 .|    |    |    <= true
+9467 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1380]
+9467 .|    |    <= true
+9467 .|    |    no need to authenticate [Client.php:1247]
+9467 .|    <= true
+9467 .<= ''
+9467 .=> phpCAS::logout() [auth.php:28]
+9467 .|    => CAS_Client::logout(array ()) [CAS.php:1368]
+9467 .|    |    Prepare redirect to : https://sso.ui.ac.id/cas2/logout [Client.php:1659]
+9467 .|    |    exit()
+9467 .|    |    -
+9467 .|    -
+3F9D .START phpCAS-1.3.3+ ****************** [CAS.php:447]
+3F9D .=> phpCAS::client('2.0', 'sso.ui.ac.id/cas2', 443, '') [auth.php:10]
+3F9D .|    => CAS_Client::__construct('2.0', false, 'sso.ui.ac.id/cas2', 443, '', true) [CAS.php:340]
+3F9D .|    |    Starting a new session ST-4571-BsEcTOVbhhAbBkUgkZGU-ssouiacid [Client.php:906]
+3F9D .|    <= ''
+3F9D .<= ''
+3F9D .=> phpCAS::setNoCasServerValidation() [auth.php:19]
+3F9D .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1562]
+3F9D .<= ''
+3F9D .=> phpCAS::forceAuthentication() [auth.php:22]
+3F9D .|    => CAS_Client::forceAuthentication() [CAS.php:1024]
+3F9D .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+3F9D .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+3F9D .|    |    |    |    no user found [Client.php:1598]
+3F9D .|    |    |    <= false
+3F9D .|    |    |    no ticket found [Client.php:1457]
+3F9D .|    |    <= false
+3F9D .|    |    => CAS_Client::redirectToCas(false) [Client.php:1254]
+3F9D .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1619]
+3F9D .|    |    |    |    => CAS_Client::getURL() [Client.php:342]
+3F9D .|    |    |    |    |    Final URI: http://localhost/gudang-proyek/auth/auth.php [Client.php:3472]
+3F9D .|    |    |    |    <= 'http://localhost/gudang-proyek/auth/auth.php'
+3F9D .|    |    |    <= 'https://sso.ui.ac.id/cas2/login?service=http%3A%2F%2Flocalhost%2Fgudang-proyek%2Fauth%2Fauth.php'
+3F9D .|    |    |    Redirect to : https://sso.ui.ac.id/cas2/login?service=http%3A%2F%2Flocalhost%2Fgudang-proyek%2Fauth%2Fauth.php [Client.php:1626]
+3F9D .|    |    |    exit()
+3F9D .|    |    |    -
+3F9D .|    |    -
+3F9D .|    -
+2293 .START phpCAS-1.3.3+ ****************** [CAS.php:447]
+2293 .=> phpCAS::client('2.0', 'sso.ui.ac.id/cas2', 443, '') [auth.php:10]
+2293 .|    => CAS_Client::__construct('2.0', false, 'sso.ui.ac.id/cas2', 443, '', true) [CAS.php:340]
+2293 .|    |    Starting a new session ST-4571-BsEcTOVbhhAbBkUgkZGU-ssouiacid [Client.php:906]
+2293 .|    |    Ticket 'ST-4574-lj57yobjx3BZa0dLbjgP-sso.ui.ac.id' found [Client.php:988]
+2293 .|    <= ''
+2293 .<= ''
+2293 .=> phpCAS::setNoCasServerValidation() [auth.php:19]
+2293 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1562]
+2293 .<= ''
+2293 .=> phpCAS::forceAuthentication() [auth.php:22]
+2293 .|    => CAS_Client::forceAuthentication() [CAS.php:1024]
+2293 .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+2293 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+2293 .|    |    |    |    no user found [Client.php:1598]
+2293 .|    |    |    <= false
+2293 .|    |    |    CAS 2.0 ticket `ST-4574-lj57yobjx3BZa0dLbjgP-sso.ui.ac.id' is present [Client.php:1410]
+2293 .|    |    |    => CAS_Client::validateCAS20('', NULL, NULL) [Client.php:1413]
+2293 .|    |    |    |     [Client.php:3107]
+2293 .|    |    |    |    => CAS_Client::getServerServiceValidateURL() [Client.php:3114]
+2293 .|    |    |    |    |    => CAS_Client::getURL() [Client.php:453]
+2293 .|    |    |    |    |    |    Final URI: http://localhost/gudang-proyek/auth/auth.php [Client.php:3472]
+2293 .|    |    |    |    |    <= 'http://localhost/gudang-proyek/auth/auth.php'
+2293 .|    |    |    |    <= 'https://sso.ui.ac.id/cas2/serviceValidate?service=http%3A%2F%2Flocalhost%2Fgudang-proyek%2Fauth%2Fauth.php'
+2293 .|    |    |    |    => CAS_Client::_readURL('https://sso.ui.ac.id/cas2/serviceValidate?service=http%3A%2F%2Flocalhost%2Fgudang-proyek%2Fauth%2Fauth.php&ticket=ST-4574-lj57yobjx3BZa0dLbjgP-sso.ui.ac.id', NULL, NULL, NULL) [Client.php:3124]
+2293 .|    |    |    |    |    => CAS_Request_CurlRequest::sendRequest() [AbstractRequest.php:242]
+2293 .|    |    |    |    |    |    Response Body: 
+2293 .|    |    |    |    |    |    
+2293 .|    |    |    |    |    |    
+2293 .|    |    |    |    |    |    
+2293 .|    |    |    |    |    |    
+2293 .|    |    |    |    |    |    <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+2293 .|    |    |    |    |    |    	<cas:authenticationSuccess>
+2293 .|    |    |    |    |    |    		<cas:user>pandhu.hutomo</cas:user>
+2293 .|    |    |    |    |    |    
+2293 .|    |    |    |    |    |    		<cas:attributes>
+2293 .|    |    |    |    |    |    		    
+2293 .|    |    |    |    |    |    			
+2293 .|    |    |    |    |    |    			   
+2293 .|    |    |    |    |    |    			   
+2293 .|    |    |    |    |    |    			   
+2293 .|    |    |    |    |    |    			   
+2293 .|    |    |    |    |    |    				<cas:ldap_cn>PANDHU HUTOMO ADITYA</cas:ldap_cn>
+2293 .|    |    |    |    |    |    			   
+2293 .|    |    |    |    |    |    			
+2293 .|    |    |    |    |    |    		    
+2293 .|    |    |    |    |    |    			
+2293 .|    |    |    |    |    |    			   
+2293 .|    |    |    |    |    |    			   
+2293 .|    |    |    |    |    |    				
+2293 .|    |    |    |    |    |                                      <cas:kd_org>01.00.12.01</cas:kd_org> 
+2293 .|    |    |    |    |    |    				
+2293 .|    |    |    |    |    |    			   
+2293 .|    |    |    |    |    |    			   
+2293 .|    |    |    |    |    |    			   
+2293 .|    |    |    |    |    |    			
+2293 .|    |    |    |    |    |    		    
+2293 .|    |    |    |    |    |    			
+2293 .|    |    |    |    |    |    			   
+2293 .|    |    |    |    |    |    			   
+2293 .|    |    |    |    |    |    			   
+2293 .|    |    |    |    |    |    			   
+2293 .|    |    |    |    |    |    				<cas:peran_user>mahasiswa</cas:peran_user>
+2293 .|    |    |    |    |    |    			   
+2293 .|    |    |    |    |    |    			
+2293 .|    |    |    |    |    |    		    
+2293 .|    |    |    |    |    |    			
+2293 .|    |    |    |    |    |    			   
+2293 .|    |    |    |    |    |    			   
+2293 .|    |    |    |    |    |    			   
+2293 .|    |    |    |    |    |    			   
+2293 .|    |    |    |    |    |    				<cas:nama>Pandhu Hutomo Aditya</cas:nama>
+2293 .|    |    |    |    |    |    			   
+2293 .|    |    |    |    |    |    			
+2293 .|    |    |    |    |    |    		    
+2293 .|    |    |    |    |    |    			
+2293 .|    |    |    |    |    |    			   
+2293 .|    |    |    |    |    |    			   
+2293 .|    |    |    |    |    |    			   
+2293 .|    |    |    |    |    |    			   
+2293 .|    |    |    |    |    |    				<cas:npm>1206277426</cas:npm>
+2293 .|    |    |    |    |    |    			   
+2293 .|    |    |    |    |    |    			
+2293 .|    |    |    |    |    |    		    
+2293 .|    |    |    |    |    |    		</cas:attributes>
+2293 .|    |    |    |    |    |    
+2293 .|    |    |    |    |    |    
+2293 .|    |    |    |    |    |    
+2293 .|    |    |    |    |    |    	</cas:authenticationSuccess>
+2293 .|    |    |    |    |    |    </cas:serviceResponse>
+2293 .|    |    |    |    |    |    
+2293 .|    |    |    |    |    |     [CurlRequest.php:84]
+2293 .|    |    |    |    |    <= true
+2293 .|    |    |    |    <= true
+2293 .|    |    |    |    => CAS_Client::_readExtraAttributesCas20(DOMNodeList) [Client.php:3182]
+2293 .|    |    |    |    |    Found nested jasig style attributes [Client.php:3269]
+2293 .|    |    |    |    |    Attribute [ldap_cn] = PANDHU HUTOMO ADITYA [Client.php:3276]
+2293 .|    |    |    |    |    Attribute [kd_org] = 01.00.12.01 [Client.php:3276]
+2293 .|    |    |    |    |    Attribute [peran_user] = mahasiswa [Client.php:3276]
+2293 .|    |    |    |    |    Attribute [nama] = Pandhu Hutomo Aditya [Client.php:3276]
+2293 .|    |    |    |    |    Attribute [npm] = 1206277426 [Client.php:3276]
+2293 .|    |    |    |    <= ''
+2293 .|    |    |    |    Storing Proxy List [Client.php:3191]
+2293 .|    |    |    |    => CAS_ProxyChain_AllowedList::isProxyListAllowed(array ()) [Client.php:3194]
+2293 .|    |    |    |    |    No proxies were found in the response [AllowedList.php:81]
+2293 .|    |    |    |    <= true
+2293 .|    |    |    |    => CAS_Client::_renameSession('ST-4574-lj57yobjx3BZa0dLbjgP-sso.ui.ac.id') [Client.php:3226]
+2293 .|    |    |    |    |    Killing session: ST-4571-BsEcTOVbhhAbBkUgkZGU-ssouiacid [Client.php:3588]
+2293 .|    |    |    |    |    Starting session: ST-4574-lj57yobjx3BZa0dLbjgP-ssouiacid [Client.php:3592]
+2293 .|    |    |    |    |    Restoring old session vars [Client.php:3595]
+2293 .|    |    |    |    <= ''
+2293 .|    |    |    <= true
+2293 .|    |    |    CAS 2.0 ticket `ST-4574-lj57yobjx3BZa0dLbjgP-sso.ui.ac.id' was validated [Client.php:1416]
+2293 .|    |    |    => CAS_Client::getURL() [Client.php:1481]
+2293 .|    |    |    <= 'http://localhost/gudang-proyek/auth/auth.php'
+2293 .|    |    |    Prepare redirect to : http://localhost/gudang-proyek/auth/auth.php [Client.php:1481]
+2293 .|    |    |    => CAS_Client::getURL() [Client.php:1483]
+2293 .|    |    |    <= 'http://localhost/gudang-proyek/auth/auth.php'
+2293 .|    |    |    exit()
+2293 .|    |    |    -
+2293 .|    |    -
+4E33 .START phpCAS-1.3.3+ ****************** [CAS.php:447]
+2293 .|    -
+4E33 .=> phpCAS::client('2.0', 'sso.ui.ac.id/cas2', 443, '') [auth.php:10]
+4E33 .|    => CAS_Client::__construct('2.0', false, 'sso.ui.ac.id/cas2', 443, '', true) [CAS.php:340]
+4E33 .|    |    Starting a new session ST-4574-lj57yobjx3BZa0dLbjgP-ssouiacid [Client.php:906]
+4E33 .|    <= ''
+4E33 .<= ''
+4E33 .=> phpCAS::setNoCasServerValidation() [auth.php:19]
+4E33 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1562]
+4E33 .<= ''
+4E33 .=> phpCAS::forceAuthentication() [auth.php:22]
+4E33 .|    => CAS_Client::forceAuthentication() [CAS.php:1024]
+4E33 .|    |    => CAS_Client::isAuthenticated() [Client.php:1245]
+4E33 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1356]
+4E33 .|    |    |    |    user = `pandhu.hutomo' [Client.php:1585]
+4E33 .|    |    |    <= true
+4E33 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1380]
+4E33 .|    |    <= true
+4E33 .|    |    no need to authenticate [Client.php:1247]
+4E33 .|    <= true
+4E33 .<= ''

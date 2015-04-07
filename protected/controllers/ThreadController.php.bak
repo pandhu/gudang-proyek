@@ -1,0 +1,80 @@
+<?php
+
+class ThreadController extends Controller
+{
+	public function init(){
+		//check user role
+		if (false){
+			$this->redirect('client/login');
+		}
+	}
+	//?
+	public function actionIndex(){
+		$thread = Thread::model();
+		var_dump($thread->attributes);
+	}
+
+	//menampilkan halaman pembutaan thread baru
+	public function actionCreate(){
+
+		$threadModel = Thread::model();
+		$this->render('/thread/create', array('threadModel'=>$threadModel));
+	}
+
+	//menyimpan thread baru
+	public function actionSave(){
+		$newThread = new Thread;
+		$newThread->attributes = $_POST['Thread'];
+		//$newThread->Tanggal_Deadline = $_POST['tgl_deadline'];
+		//$newThread->Username = Yii::app()->session['client']['username'];
+		$date = str_replace("/", "-", $_POST['Thread']['Tanggal_Deadline']);
+		$newThread->Tanggal_Deadline = $date;
+		$date = $date.":00";
+		var_dump($newThread->attributes);
+		//var_dump($date);
+		//$newThread->save();
+		//$this->redirect(Yii::app()->createUrl('thread/listthread'));
+
+	}
+
+	//menampilkan halaman penyuntingan thread
+	public function actionEdit($id){
+		$threadModel = Thread::model()->findByPk($id);
+		$this->render('/thread/edit', array('threadModel'=>$threadModel));
+	}
+
+	//update thread
+	public function actionUpdate($id){
+		$threadModel = Thread::model()->findByPk($id);
+		$threadModel->attributes = $_POST['Thread'];
+		$newThread->Tanggal_Deadline = $_POST['tgl_deadline'];
+		//$newThread->Username = Yii::app()->session['client']['username'];
+		$threadModel->update();
+		$this->redirect(Yii::app()->createUrl('thread/listthread'));
+	}
+
+	//delete thread
+	public function actionDelete($id){
+		$thread = Thread::model()->findByPk($id);
+	    $thread->delete();
+	    Yii::app()->user->setFlash('success', 'Delete Success.');
+	    $this->redirect(Yii::app()->createUrl('thread/listthread'));
+
+	}
+
+	public function actionViewThread($id){
+		$thread = Thread::model()->findByPk($id);
+		$this->render('/thread/view', array('thread'=>$thread)); 
+	}
+	
+	public function actionListThread(){
+		$listThread = Thread::model()->findAll();
+		$this->render('/thread/listThread',array('listThread'=>$listThread));
+	}
+	
+	//reply thread
+	public function actionReply($id){
+		$replyModel = Komentar::model();
+		$this->render('/thread/reply', array('replyModel'=>$replyModel));
+	}
+}
