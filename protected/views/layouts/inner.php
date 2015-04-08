@@ -52,7 +52,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                <img class="user-logo" src="assets/icons/female-icon.png">Halo, afinafiah!<span class="caret"></span>
+                <img class="user-logo" src="assets/icons/female-icon.png">Halo, <?php echo Yii::app()->session['user']['Username']?>!<span class="caret"></span>
               </a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="acc_settings.html">Pengaturan akun</a></li>

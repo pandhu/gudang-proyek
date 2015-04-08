@@ -380,7 +380,7 @@ img.prof-pic {
 }
 
 .profile-table {
-	padding-top: 100px;
+	padding-top: 50px;
 }
 
 p.form-title {
@@ -454,7 +454,7 @@ form-control::-moz-placeholder,
 }
 .form-control,
 .select2-search input[type="text"] {
-  border: 2px solid #bdc3c7;
+  border: 1px solid #bdc3c7;
   color: #34495e;
   font-family: "Lato", Helvetica, Arial, sans-serif;
   font-size: 15px;

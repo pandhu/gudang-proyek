@@ -1,4 +1,4 @@
-
+<div class="container">
 <div class="row profile-table">
   <div class="col-sm-2">
     <img class="prof-pic" src="assets/icons/female-user.png">
@@ -6,7 +6,7 @@
   <div class="col-sm-10">
     <div class="row">
       <div class="col-sm-12">
-        <h1 class="user-fullname">Saadaturrohim Nafi'ah Al-Khoir</h1>
+        <h1 class="user-fullname"><?php echo $client->Nama?></h1>
       </div>
     </div>
     <div class="row">
@@ -147,3 +147,4 @@
       </div>
     </div>
   </div>
+</div>

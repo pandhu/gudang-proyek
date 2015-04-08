@@ -12,7 +12,7 @@ return array(
 	// preloading 'log' component
 	'preload'=>array('log'),
 
-	
+	'defaultController'=>'site',
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
@@ -47,6 +47,7 @@ return array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+				'site/gantipassword/<id>'=>'site/gantipassword',
 			),
 		),
 		
@@ -74,6 +75,15 @@ return array(
 				*/
 			),
 		),
+		'Smtpmail'=>array(
+            'class'=>'application.extensions.smtpmail.PHPMailer',
+            'Host'=>"ssl://smtp.googlemail.com",
+            'Username'=>'gudangproyek07@gmail.com',
+            'Password'=>'ppl072015',
+            'Mailer'=>'smtp',
+            'Port'=>465,
+            'SMTPAuth'=>true, 
+        ),
 
 	),
 

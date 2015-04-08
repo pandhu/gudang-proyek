@@ -20,4 +20,18 @@ class Controller extends CController
 	 * for more details on how to specify this property.
 	 */
 	public $breadcrumbs=array();
+
+	public function mailsend($to,$from,$subject,$message){
+        $mail=Yii::app()->Smtpmail;
+        $mail->SetFrom($from, 'From NAme');
+        $mail->Subject = $subject;
+        $mail->MsgHTML($message);
+        $mail->AddAddress($to, "");
+        if(!$mail->Send()) {
+            echo "Mailer Error: " . $mail->ErrorInfo;
+        }else {
+            echo "Message sent!";
+        }
+	    $mail->ClearAddresses(); //clear addresses for next email sending
+    }
 }

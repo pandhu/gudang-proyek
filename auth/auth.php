@@ -29,7 +29,7 @@ if (isset($_REQUEST['logout'])) {
 }
 
 $_SESSION['data'] = phpCAS::getAttributes(); // simpen data user ke session
-$_SESSION['data']['username'] = phpCAS::getUser();
+$_SESSION['data']['Username'] = phpCAS::getUser();
 //var_dump($_SESSION['data']);
 header("Location: http://localhost/gudang-proyek/developer/dashboard"); // redirect
 ?>

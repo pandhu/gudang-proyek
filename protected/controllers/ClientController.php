@@ -11,6 +11,7 @@ class ClientController extends Controller
 	}
 	
 	public function actionProfile(){
+		$this->layout = 'inner';
 		if(!isset(Yii::app()->session['user'])){
 			$this->redirect(Yii::app()->createUrl('/client/login'));
 		}
@@ -37,7 +38,7 @@ class ClientController extends Controller
 			if($userPass == md5($_POST['SuperUser']['Password']))
 			var_dump($userPass);
 			Yii::app()->session['user'] = $user->attributes;
-			$this->redirect(Yii::app()->createUrl('/client/profile'));
+			$this->redirect(Yii::app()->baseUrl.'/client/profile');
 		}
 		$userModel = SuperUser::model();
 		$this->render('/client/login', array('userModel'=>$userModel));
@@ -70,23 +71,23 @@ class ClientController extends Controller
 		$newClient->save(false);
 		//insert session for success msg here
 
-		$this->redirect(Yii::app()->createUrl('/client/login'));
+		$this->redirect(Yii::app()->baseUrl.'/client/login');
 
 	}
 
 	//halaman edit client
-	public function actionEdit($id){
-		$threadModel = Thread::model()->findByPk($id);
-		$this->render('/thread/edit', array('threadModel', $threadModel));
+	public function actionEdit(){
+		$this->layout = "inner";
+		$clientModel = Client::model()->findByPk(Yii::app()->session['user']['Username']);
+		$this->render('/client/edit', array('clientModel'=> $clientModel));
 	}
 
 	//update client
-	public function actionUpdate($id){
-		$newThred = Thread::model()->findByPk($id);
-		$newThred->attributes = $_POST['Thread'];
-		$newThred->Deskripsi = $_POST['deskripsi'];
-		$newThred->Username = Yii::app()->session['client']['username'];
-		$newThred->update();
+	public function actionUpdate(){
+		$client = Client::model()->findByPk(Yii::app()->session['user']['Username']);
+		$client->attributes = $_POST['Client'];
+		$client->update();
+		$this->redirect(Yii::app()->baseUrl.'/client/edit');
 	}
 
 	//delete akun client
@@ -95,10 +96,4 @@ class ClientController extends Controller
 		Yii::app()->session['success_msg'] = "isi pesan";
 
 	}
-
-	public function actionView($id){
-		$thread = Thread::model()->findByPk($id);
-		$this->render('view', array('thread'=>$thread)); 
-	}
-
 }

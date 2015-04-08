@@ -4,8 +4,8 @@ class DeveloperController extends Controller
 {
 	public function actionDashboard(){
 		session_start();
-		
-		$developer = Developer::model()->findByPK($_SESSION['data']['username']);
+		var_dump($_SESSION['data']);
+		$developer = Developer::model()->findByPK($_SESSION['data']['Username']);
 		Yii::app()->session['user'] = $_SESSION['data'];
 
 		if ($developer == null){
@@ -33,10 +33,4 @@ class DeveloperController extends Controller
 		$developer->Username = $user['username'];
 		$this->render('/developer/register', array('developerModel'=>$developer));
 	}
-	
-	public function actionRegisterSubmit(){
-
-	}
-
-
 }

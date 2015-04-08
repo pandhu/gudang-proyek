@@ -65,4 +65,17 @@ class ModeratorController extends Controller
 		$this->render('/moderator/login', array('userModel'=>$userModel));
 	}
 
+	public function actionEdit(){
+		$this->layout = "inner";
+		$moderatorModel = Client::model()->findByPk(Yii::app()->session['user']['Username']);
+		$this->render('/client/edit', array('moderatorModel'=> $moderatorModel));
+	}
+
+	//update client
+	public function actionUpdate(){
+		$moderator = Moderator::model()->findByPk(Yii::app()->session['user']['Username']);
+		$moderator->attributes = $_POST['Client'];
+		$moderator->update();
+		$this->redirect(Yii::app()->baseUrl.'/moderator/edit');
+	}
 }

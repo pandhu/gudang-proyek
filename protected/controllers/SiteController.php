@@ -29,9 +29,49 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('tes');
+		$this->render('/main/landing');
+	}
+	public function actionEmail(){
+		$this->mailsend('aditya.pandhu@gmail.com','localhost','coba','coba');
+	}
+	public function actionLupaPassword()
+	{	
+		if(isset($_POST['email'])){
+			$email = $_POST['email'];
+			$magicNumber = rand(1,10000);
+			$token = md5($email.$magicNumber);
+			$user = SuperUser::model()->findByAttributes(array('Email'=>$email));
+			if($user == null){
+				return;
+			}
+			$user->Token = $token;
+			$user->update();
+			$content = "
+			Change your password by visiting link below \n
+			http://localhost".Yii::app()->baseUrl."/site/gantipassword/".$token.
+			"\n Thank you
+			";
+			$this->mailsend($email, 'support@gudang-proyek.com', 'Forgot Password', $content);
+
+		}
+		$this->render('/main/lupa_password');
 	}
 
+	public function actionGantipassword($id){
+		$user = SuperUser::model()->findByAttributes(array('Token'=>$id));
+		if(isset($_POST['password'])){
+			$password = $_POST['password'];
+			$confirm = $_POST['confirm'];
+			if($password != $confirm){
+				return;
+			}
+			$user->Password = $password;
+			$user->update();
+			$this->redirect('');
+
+		}
+		$this->render('/main/ganti_password', array('user'=>$user));
+	}
 	/**
 	 * This is the action to handle external exceptions.
 	 */
