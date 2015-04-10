@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row profile-table">
     <div class="col-sm-2">
-      <img class="prof-pic" src="assets/icons/female-user.png">
+      <img class="prof-pic " src="<?php echo Yii::app()->baseUrl?>/uploads/propict/<?php echo $imageUrl?>">
     </div>
     <div class="col-sm-10">
-      <?php $form = $this->beginWidget('CActiveForm', array('htmlOptions'=>array('class'=>'form-horizontal col-sm-4'), 'action'=>Yii::app()->createUrl('/client/update')));?>
+      <?php $form = $this->beginWidget('CActiveForm', array('htmlOptions'=>array('class'=>'form-horizontal col-sm-4','enctype'=>'multipart/form-data'), 'action'=>Yii::app()->createUrl('/client/update')));?>
       <div class="form-group">
         <?php echo $form->label($clientModel, 'Email', array('class'=>'col-sm-4 control-label'));?>  
         <div class="col-sm-8">          
@@ -49,6 +49,13 @@
         </div>
         <?php echo $form->error($clientModel, 'Kota_Asal');?>   
       </div>
+      <div class="form-group">
+        <?php echo $form->label($clientModel, 'Profile_Image', array('class'=>'col-sm-4 control-label'));?>  
+        <div class="col-sm-8">          
+          <?php echo $form->fileField($superUser,'Image', array('class'=>'form-control', 'required'=>'false'));?>
+        </div>
+      </div>
+
       <div class="form-group">
           <div class="col-sm-4"></div>
           <div class="col-sm-4">

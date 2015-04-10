@@ -16,13 +16,16 @@ class ClientController extends Controller
 			$this->redirect(Yii::app()->createUrl('/client/login'));
 		}
 		$userData = Yii::app()->session['user'];
-		$client = Client::model()->findByPk($userData['Username']);
-
+		$client = Client::model()->with('superuser')->findByPk($userData['Username']);
+		$imageUrl = "default_profile.gif";
+		if($client->superuser->Image != null){
+			$imageUrl = $client->superuser->Image;
+		}
 		//$thread = Thread::model()->with('komentar')->findAllByAttributes(array('Username'=>$userData['Username']));
 		$thread = Thread::model()->with('komentar')->findAllByAttributes(array('Username'=>'cyntia.sani'));
 		//var_dump($thread[0]->komentar);
 		//$thread = Thread::model()->findAll("Username = '$client->Username'");
-		$this->render('/client/profile', array('client'=>$client,'threads'=>$thread));
+		$this->render('/client/profile', array('client'=>$client,'threads'=>$thread, 'imageUrl'=>$imageUrl));
 
 	}
 
@@ -78,14 +81,32 @@ class ClientController extends Controller
 	//halaman edit client
 	public function actionEdit(){
 		$this->layout = "inner";
-		$clientModel = Client::model()->findByPk(Yii::app()->session['user']['Username']);
-		$this->render('/client/edit', array('clientModel'=> $clientModel));
+		$clientModel = Client::model()->with('superuser')->findByPk(Yii::app()->session['user']['Username']);
+		$imageUrl = "default_profile.gif";
+		if($clientModel->superuser->Image != null){
+			$imageUrl = $clientModel->superuser->Image;
+		}
+		$superUser = SuperUser::model()->findByPk(Yii::app()->session['user']['Username']);
+		$this->render('/client/edit', array('clientModel'=> $clientModel, 'superUser'=>$superUser, 'imageUrl'=>$imageUrl));
 	}
 
 	//update client
 	public function actionUpdate(){
+		$superUser = SuperUser::model()->findByPk(Yii::app()->session['user']['Username']);
 		$client = Client::model()->findByPk(Yii::app()->session['user']['Username']);
 		$client->attributes = $_POST['Client'];
+		if(count($_POST["SuperUser"])>0){
+			$filename = explode(".",$_FILES["SuperUser"]["name"]["Image"]);
+			$filename[0] = "profile_".Yii::app()->session['user']['Username'];
+			$newFilename = $filename[0].".".$filename[1];
+			$superUser->Image = $newFilename;
+			$superUser->image=CUploadedFile::getInstance($superUser,'Image');
+
+            if($superUser->save())
+            {
+                $superUser->image->saveAs(Yii::app()->basePath.'/../uploads/propict/'.$newFilename);
+            }	
+		}
 		$client->update();
 		$this->redirect(Yii::app()->baseUrl.'/client/edit');
 	}

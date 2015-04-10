@@ -20,6 +20,7 @@ class Client extends SuperUser{
 		return array(
 			'thread'=>array(self::HAS_MANY,'Thread','id'),
 			'testimoni'=>array(self::HAS_MANY,'Testimoni','id'),
+ 			'superuser'=>array(self::HAS_ONE,'SuperUser','Username'),
 		);
 	}
 

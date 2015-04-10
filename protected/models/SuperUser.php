@@ -1,7 +1,7 @@
 <?php
 class SuperUser extends CActiveRecord{
 
-	
+	public $image;
 	public static function model($className=__CLASS__){
 		return parent::model($className);
 	}
@@ -13,12 +13,15 @@ class SuperUser extends CActiveRecord{
 	public function rules(){
 		return array(
 			array('Username,Password','required'),
+            array('Image', 'file', 'types'=>'jpg, gif, png'),
+
 		);
 	}
 
 	public function relations(){
 		return array(
 			'komentar'=>array(self::HAS_MANY,'Komentar','id'),
+			'client'=>array(self::HAS_ONE,'Client','Username'),
 		);
 	}
 
