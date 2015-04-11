@@ -2,6 +2,9 @@
 
 class ModeratorController extends Controller
 {
+	public function init(){
+		$this->layout = "moderator-inner";
+	}
 	public function actionDashboard(){
 		session_start();
 
@@ -11,8 +14,12 @@ class ModeratorController extends Controller
 	}
 
 	public function actionProfile(){
-		$moderator = Moderator::model()->findByPk(Yii::app()->session['user']['Username']);
-		$this->render('/moderator/profile', array('moderator'=>$moderator));
+		$imageUrl = "default_profile.gif";
+		$moderator = Moderator::model()->with('superuser')->findByPk(Yii::app()->session['user']['Username']);
+		if($moderator->superuser->Image != null){
+			$imageUrl = $moderator->superuser->Image;
+		}
+		$this->render('/moderator/profile', array('moderator'=>$moderator,'imageUrl'=>$imageUrl));
 	}
 	public function actionRegister(){
 		$user = Yii::app()->session['user'];
@@ -66,16 +73,44 @@ class ModeratorController extends Controller
 	}
 
 	public function actionEdit(){
-		$this->layout = "inner";
-		$moderatorModel = Client::model()->findByPk(Yii::app()->session['user']['Username']);
-		$this->render('/client/edit', array('moderatorModel'=> $moderatorModel));
+		$this->layout = "moderator-inner";
+		$imageUrl = "default_profile.gif";
+		$moderatorModel = Moderator::model()->with('superuser')->findByPk(Yii::app()->session['user']['Username']);
+		if($moderatorModel->superuser->Image != null){
+			$imageUrl = $moderatorModel->superuser->Image;
+		}
+		$superUser = SuperUser::model()->findByPk(Yii::app()->session['user']['Username']);
+		$this->render('/moderator/edit', array('moderatorModel'=> $moderatorModel, 'imageUrl'=>$imageUrl, 'superUser'=>$superUser));
 	}
 
-	//update client
+	//update moderator
 	public function actionUpdate(){
+		$superUser = SuperUser::model()->findByPk(Yii::app()->session['user']['Username']);
 		$moderator = Moderator::model()->findByPk(Yii::app()->session['user']['Username']);
-		$moderator->attributes = $_POST['Client'];
+		$moderator->attributes = $_POST['Moderator'];
+
+		//var_dump($_FILES['SuperUser']['name']['Image']);
+		
+		if($_FILES['SuperUser']['name']['Image'] != ""){
+			$filename = explode(".",$_FILES["SuperUser"]["name"]["Image"]);
+			$filename[0] = "profile_".Yii::app()->session['user']['Username'];
+			$newFilename = $filename[0].".".$filename[1];
+			$superUser->Image = $newFilename;
+			$superUser->image=CUploadedFile::getInstance($superUser,'Image');
+
+			//var_dump($filename);
+			//return;
+            if($superUser->save())
+            {
+                $superUser->image->saveAs(Yii::app()->basePath.'/../uploads/propict/'.$newFilename);
+            }	
+		}
 		$moderator->update();
 		$this->redirect(Yii::app()->baseUrl.'/moderator/edit');
+	}
+
+	public function actionLogout(){
+		Yii::app()->session->clear();
+		$this->redirect(Yii::app()->baseUrl);
 	}
 }

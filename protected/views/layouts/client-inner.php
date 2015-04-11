@@ -46,8 +46,8 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Beranda</a></li>
-            <li><a href="client_profile.html">Profil</a></li>
+            <li class="active"><a href="<?php echo Yii::app()->baseUrl?>/client">Beranda</a></li>
+            <li><a href="<?php echo Yii::app()->baseUrl?>/client/profile">Profil</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
@@ -55,8 +55,8 @@
                 <img class="user-logo" src="assets/icons/female-icon.png">Halo, <?php echo Yii::app()->session['user']['Username']?>!<span class="caret"></span>
               </a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="acc_settings.html">Pengaturan akun</a></li>
-                <li><a href="index.html">Keluar</a></li>
+                <li><a href="<?php echo Yii::app()->baseUrl?>/client/edit">Pengaturan akun</a></li>
+                <li><a href="<?php echo Yii::app()->baseUrl?>/client/logout">Keluar</a></li>
               </ul>
             </li>
           </ul>

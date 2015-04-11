@@ -19,6 +19,7 @@ class Developer extends CActiveRecord{
 	public function relations(){
 		return array(
 			'testimoni'=>array(self::HAS_MANY,'Testimoni','id'),
+			'superuser'=>array(self::HAS_ONE,'SuperUser','Username'),
 		);
 	}
 

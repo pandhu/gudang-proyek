@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row profile-table">
     <div class="col-sm-2">
-      <img class="prof-pic" src="assets/icons/female-user.png">
+      <img class="prof-pic" src="<?php echo Yii::app()->baseUrl?>/uploads/propict/<?php echo $imageUrl?>">
     </div>
     <div class="col-sm-10">
       <div class="row">

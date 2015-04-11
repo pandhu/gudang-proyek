@@ -13,7 +13,7 @@
 			<label class="login-field-icon fui-lock" for="login-pass"></label>
 		</div>
 
-  		<?php echo CHtml::submitButton('Masuk!', array('class'=>'btn btn-primary btn-lg btn-block', 'style'=>'margin-top:10px; float:right'));?>
+  		<?php echo CHtml::submitButton('Masuk!', array('class'=>'btn btn-primary am-btn-primary btn-lg btn-block', 'style'=>'margin-top:10px; float:right'));?>
   		<a class="login-link" href="client_forget-pass.html">Lupa kata sandi Anda?</a>
 	</div>
 	<?php $this->endWidget();?>

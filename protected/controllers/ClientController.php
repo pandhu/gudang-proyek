@@ -5,13 +5,13 @@ class ClientController extends Controller
 	//fungsi init
 	public function init(){
 		//check user role
+		$this->layout = "client-inner";
 		if (false){
 			$this->redirect('client/login');
 		}
 	}
 	
 	public function actionProfile(){
-		$this->layout = 'inner';
 		if(!isset(Yii::app()->session['user'])){
 			$this->redirect(Yii::app()->createUrl('/client/login'));
 		}
@@ -80,7 +80,6 @@ class ClientController extends Controller
 
 	//halaman edit client
 	public function actionEdit(){
-		$this->layout = "inner";
 		$clientModel = Client::model()->with('superuser')->findByPk(Yii::app()->session['user']['Username']);
 		$imageUrl = "default_profile.gif";
 		if($clientModel->superuser->Image != null){
@@ -116,5 +115,10 @@ class ClientController extends Controller
 		Thread::model()->deleteAll('id=$id');
 		Yii::app()->session['success_msg'] = "isi pesan";
 
+	}
+
+	public function actionLogout(){
+		Yii::app()->session->clear();
+		$this->redirect(Yii::app()->baseUrl);
 	}
 }

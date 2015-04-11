@@ -28,46 +28,24 @@
     <![endif]-->
   </head>
 
-  <body>
-    <div class="header">
+  <div class="header am-header">
     </div>
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top nav-top">
+    <nav class="navbar navbar-default navbar-fixed-top nav-top am-nav-top">
     </nav>
     <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><img class="client-home" src="<?php echo Yii::app()->baseUrl?>/dist/assets/icons/favicon-60.png">GudangProyek</a>
+        <div class="main-header">
+          <img class="logo" src="<?php echo Yii::app()->baseUrl?>/dist/assets/icons/favicon-72.png">
+          <h1 class="gudang-proyek">GudangProyek</h1>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Beranda</a></li>
-            <li><a href="client_profile.html">Profil</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                <img class="user-logo" src="assets/icons/female-icon.png">Halo, <?php echo Yii::app()->session['user']['Username']?>!<span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="acc_settings.html">Pengaturan akun</a></li>
-                <li><a href="index.html">Keluar</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse -->
+        <!--/.nav-collapse -->
     </nav>
 
 	<?php echo $content; ?>
 
 	<div class="clear"></div>
 
-<footer class="footer">
+  <footer class="footer am-footer">
       <div class="container">
         <br>
         <!-- <p class="text-muted">Place sticky footer content here.</p> -->
@@ -76,8 +54,10 @@
       <p class="text-contact">Fakultas Ilmu Komputer</p>
       <p class="text-contact">Universitas Indonesia, Depok</p>
       <p class="text-contact">E-mail. &nbsp; gudangproyek@cs.ui.ac.id</p>
-      <p class="text-copyright">B07 &copy; 2015</p>
+      <p class="am-text">B07 &copy; 2015</p>
     </footer>
+
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

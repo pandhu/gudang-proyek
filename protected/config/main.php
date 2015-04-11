@@ -48,6 +48,7 @@ return array(
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 				'site/gantipassword/<id>'=>'site/gantipassword',
+				'admin/deletemod/<id>'=>'admin/deletemod',
 			),
 		),
 		

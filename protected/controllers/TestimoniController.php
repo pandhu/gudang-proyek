@@ -8,11 +8,6 @@ class TestimoniController extends Controller
 			$this->redirect('client/login');
 		}
 	}
-	//?
-	public function actionIndex(){
-		$thread = Thread::model();
-		var_dump($thread->attributes);
-	}
 
 	//menampilkan halaman pembutaan thread baru
 	public function actionCreate(){
@@ -28,4 +23,19 @@ class TestimoniController extends Controller
 		$newThred->Username = Yii::app()->session['client']['username'];
 		$newThred->save();
 	}
+	
+	public function actionAjax()
+    {
+        $data = array();
+        $data["myValue"] = "Content loaded";
+ 
+        $this->render('/testimoni/ajax', $data);
+    }
+	public function actionUpdateAjax()
+    {
+        $data = array();
+        $data["myValue"] = "Content updated in AJAX";
+ 
+        $this->renderPartial('_ajaxContent', $data, false, true);
+    }
 }

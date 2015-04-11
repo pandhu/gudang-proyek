@@ -22,6 +22,9 @@ class SuperUser extends CActiveRecord{
 		return array(
 			'komentar'=>array(self::HAS_MANY,'Komentar','id'),
 			'client'=>array(self::HAS_ONE,'Client','Username'),
+			'moderator'=>array(self::HAS_ONE,'Moderator','Username'),
+ 			'admin'=>array(self::HAS_ONE,'Admin','Username'),
+
 		);
 	}
 

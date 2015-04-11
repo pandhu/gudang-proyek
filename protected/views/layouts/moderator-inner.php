@@ -19,8 +19,9 @@
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="<?php echo Yii::app()->baseUrl?>/dist/assets/js/ie-emulation-modes-warning.js"></script>
-
+    <script src="<?php echo Yii::app()->baseUrl?>/dist/js/bootstrap.min.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -29,10 +30,12 @@
   </head>
 
   <body>
-    <div class="header">
+    <!-- <div class="body-left"></div>
+    <div class="body-right"></div> -->
+    <div class="header am-footer">
     </div>
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top nav-top">
+    <nav class="navbar navbar-default navbar-fixed-top nav-top am-nav-top">
     </nav>
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="navbar-header">
@@ -46,17 +49,15 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Beranda</a></li>
-            <li><a href="client_profile.html">Profil</a></li>
+            <li class="am-active"><a href="<?php echo Yii::app()->baseUrl?>/moderator">Beranda</a></li>
+            <li><a href="<?php echo Yii::app()->baseUrl?>/moderator/profile">Profil</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                <img class="user-logo" src="assets/icons/female-icon.png">Halo, <?php echo Yii::app()->session['user']['Username']?>!<span class="caret"></span>
-              </a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img class="user-logo" src="<?php echo Yii::app()->baseUrl?>/dist/assets/icons/female-icon.png">Halo, <?php echo Yii::app()->session['user']['Username']?>!<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="acc_settings.html">Pengaturan akun</a></li>
-                <li><a href="index.html">Keluar</a></li>
+                <li><a href="#">Pengaturan akun</a></li>
+                <li><a href="spec_main.html">Keluar</a></li>
               </ul>
             </li>
           </ul>
@@ -67,7 +68,7 @@
 
 	<div class="clear"></div>
 
-<footer class="footer">
+<footer class="footer am-footer">
       <div class="container">
         <br>
         <!-- <p class="text-muted">Place sticky footer content here.</p> -->
@@ -76,14 +77,13 @@
       <p class="text-contact">Fakultas Ilmu Komputer</p>
       <p class="text-contact">Universitas Indonesia, Depok</p>
       <p class="text-contact">E-mail. &nbsp; gudangproyek@cs.ui.ac.id</p>
-      <p class="text-copyright">B07 &copy; 2015</p>
+      <p class="am-text">B07 &copy; 2015</p>
     </footer>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="<?php echo Yii::app()->baseUrl?>/dist/js/bootstrap.min.js"></script>
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="<?php echo Yii::app()->baseUrl?>/dist/assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>

@@ -12,13 +12,14 @@ class Moderator extends SuperUser{
 
 	public function rules(){
 		return array(
-			array('Nama,Email,Username','required'),
+			array('Nama,Email,Username,No_Telepon','required'),
 		);
 	}
 
 	public function relations(){
 		return array(
 			'pengumuman'=>array(self::HAS_MANY,'Pengumuman','id'),
+			'superuser'=>array(self::HAS_ONE,'SuperUser','Username'),
 		);
 	}
 

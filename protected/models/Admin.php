@@ -12,11 +12,13 @@ class Admin extends SuperUser{
 
 	public function rules(){
 		return array(
+			array('Nama,Email,Username,No_Telepon','required'),
 		);
 	}
 
 	public function relations(){
 		return array(
+ 			'superuser'=>array(self::HAS_ONE,'SuperUser','Username'),
 		);
 	}
 
